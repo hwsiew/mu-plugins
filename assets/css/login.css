@@ -1,0 +1,60 @@
+
+/* logo */
+#login h1 a, .login h1 a {
+	background-image: url('../images/logo.png');
+	height:65px;
+	width:300px;
+	background-size: 300px 65px;
+	background-repeat: no-repeat;
+}
+
+/* login message */
+body.login .message { border-left-color: #17a8e3; }
+
+/* error message */
+body.login #login_error { /* border-left-color: red; */ }
+
+/* 
+ *	background 
+ */
+body.login {
+	background-image: url('../images/background.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+/* 
+ *	form 
+ */
+body.login form#loginform {
+	border-radius: 10px;
+}
+
+/* 
+ *	submit button 
+ */
+body.login div#login form#loginform p.submit input#wp-submit {
+	background-color:#17a8e3 !important;
+	color: #ffffff;
+	border: 1px solid #0d9ed9;
+	margin: 10px 10px 10px 10px;
+}
+
+/*
+ *	register | lost password & Back to site link 
+ */
+body.login p#nav a,
+body.login p#backtoblog a { /* color: white; */ }
+
+/*
+ * input on focus - username, password, rememberme
+ */
+body.login div#login form#loginform input#user_login:focus,
+body.login div#login form#loginform input#user_pass:focus,
+body.login div#login form#loginform input#rememberme:focus{
+	border-color: #17a8e3;
+	box-shadow: 0 0 0 1px #17a8e3;
+}
+
