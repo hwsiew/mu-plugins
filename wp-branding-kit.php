@@ -48,7 +48,7 @@ function login_enqueue_styles(){
 		 PLUGIN_NAME . '_login_style' ,
 		 WPMU_PLUGIN_URL . '/assets/css/login.css',
 		 array() , # dependencies
-		 PLUGIN_NAME_VERSION, # version
+		 PLUGIN_NAME_VERSION # version
 	);
 
 }
