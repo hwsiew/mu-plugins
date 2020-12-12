@@ -32,8 +32,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME', 'wp_branding_kit' );
-define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'WPBKIT_NAME', 'wp_branding_kit' );
+define( 'WPBKIT_VERSION', '1.0.0' );
+define( 'WPBKIT_NAMESPACE', 'WPBKIT');
 
 /*
  *	login page style sheet
@@ -45,10 +46,10 @@ add_action( 'login_enqueue_scripts', 'login_enqueue_styles' );
 function login_enqueue_styles(){
 
 	wp_enqueue_style(
-		 PLUGIN_NAME . '_login_style' ,
-		 WPMU_PLUGIN_URL . '/assets/css/login.css',
-		 array() , # dependencies
-		 PLUGIN_NAME_VERSION # version
+		WPBKIT_NAME . '_login_style' ,
+		WPMU_PLUGIN_URL . '/assets/css/login.css',
+		array() , # dependencies
+		WPBKIT_VERSION # version
 	);
 
 }
