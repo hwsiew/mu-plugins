@@ -6,7 +6,8 @@ You can customize the following:
 - login page logo & link
 - login page background image
 - enable or disable WordPress dashicon in admin bar 
-- more to come...
+- add additional email to receive recovery mode notification (WSoD) other than admin(s) of the site
+- and more to come...
 
 ## What Is A Must Use Plugin in WordPres
 Simply put, Must Use(MU) Plugin is a plugin which is automatically activated for WordPress site, and it cannot be deactivated from the admin dashbard unless removes from the wp-content folder. To learn more about MU plugins, please visit [here](https://wordpress.org/support/article/must-use-plugins/)
