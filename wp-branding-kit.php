@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'WPBKIT_NAME', 'wp_branding_kit' );
-define( 'WPBKIT_VERSION', '1.0.0' );
+define( 'WPBKIT_VERSION', '1.1.0' );
 define( 'WPBKIT_NAMESPACE', 'WPBKIT');
 
 /*
@@ -87,3 +87,28 @@ function example_admin_bar_remove_logo() {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu( 'wp-logo' );
 }
+
+/*
+ *	add additional recovery mode (WSoD) notification email
+ *	define an email with {WPBKIT_NAMESPACE}_RECOVERY_MODE_EMAIL in wp-config.php 
+ *	@since 1.1.0
+ */
+
+add_filter( 'recovery_mode_email', function( $email ) {
+
+	if( defined( WPBKIT_NAMESPACE . '_RECOVERY_MODE_EMAIL' ) ){
+
+		if( is_string( $email['to'] ) ) $email['to'] = array( $email['to'] );
+		
+		if( 
+			is_array( $email['to'] ) && 
+			!in_array( constant( WPBKIT_NAMESPACE . '_RECOVERY_MODE_EMAIL' ), $email['to'] )
+		){
+			array_push( $email['to'], constant( WPBKIT_NAMESPACE . '_RECOVERY_MODE_EMAIL' ) );
+		} 
+		
+	}
+	
+	return $email;
+
+} );
